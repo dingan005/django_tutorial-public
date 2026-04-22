@@ -1,0 +1,27 @@
+li:hover{
+    background-color: #2ff707;
+    border-radius: 20px;
+}
+
+/* Remove default spacing */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Carousel full screen */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: calc(100vh - 70px); /* adjust navbar height */
+}
+
+/* Image fit perfectly */
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+.navbar {
+    height: 70px;
+}

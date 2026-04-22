@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} 
+<title>Departments - City Hospital</title>
+{% endblock %} 
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+
+        {% for d in dept %}
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">
+                        {{ d.dep_name }}
+                    </h4>
+                    <p class="card-text text-muted">
+                        {{ d.dep_description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %} 
+<title>Book Appointment - City Hospital</title>
+{% endblock %} 
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row align-items-center">
+        
+        <!-- Form Section -->
+        <div class="col-md-6">
+            <h2 class="mb-4">Book an Appointment</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                </div>
+
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="mb-3">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" placeholder="Enter your phone number">
+                </div>
+
+                <div class="mb-3">
+                    <label>Department</label>
+                    <select class="form-control">
+                        <option>General Medicine</option>
+                        <option>Cardiology</option>
+                        <option>Orthopedics</option>
+                        <option>Neurology</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Appointment Date</label>
+                    <input type="date" class="form-control">
+                </div>
+
+                <button class="btn btn-primary">
+                    Book Appointment
+                </button>
+            </form>
+        </div>
+
+        <!-- Image Section -->
+        <div class="col-md-6 text-center">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef"
+                 class="img-fluid rounded shadow"
+                 alt="Hospital Booking">
+        </div>
+
+    </div>
+</div>
+{% endblock %}

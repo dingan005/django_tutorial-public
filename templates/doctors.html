@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Doctors - City Hospital</title>
+{% endblock %}
+
+{% block content %}
+
+<style>
+.doctor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+.doctor-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+}
+
+.doctor-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.doctor-info {
+    padding: 20px;
+}
+
+.doctor-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.doctor-spec {
+    color: #16a085;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.doctor-dept {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.book-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #16a085;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: #13856b;
+}
+</style>
+
+<h1 style="text-align:center; margin-top:30px;">Our Doctors</h1>
+
+<div class="doctor-container">
+
+{% for doctor in doctors %}
+    <div class="doctor-card">
+
+        <img src="{{ doctor.doc_image.url }}" class="doctor-img" alt="Doctor">
+
+        <div class="doctor-info">
+            <div class="doctor-name">{{ doctor.doc_name }}</div>
+            <div class="doctor-spec">{{ doctor.doc_spec }}</div>
+            <div class="doctor-dept">Department: {{ doctor.dep_name }}</div>
+
+            <button class="book-btn">Book Appointment</button>
+        </div>
+
+    </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
